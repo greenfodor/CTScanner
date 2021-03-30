@@ -7,5 +7,4 @@ import com.casatamplarului.ctscanner.utils.SingleLiveEvent
 class AppViewModel : ViewModel() {
     val scannedUrl = MutableLiveData<String>()
     val pageLoaded = SingleLiveEvent<Any>()
-    val backButtonDisplay = SingleLiveEvent<Boolean>()
 }

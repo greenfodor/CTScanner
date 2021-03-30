@@ -19,7 +19,6 @@ class FormDisplayFragment : BaseFragment(R.layout.fragment_form_display) {
 
         setUpWatchers()
 
-        viewModel.backButtonDisplay.value = true
         binding.wvLoadingPb.isVisible = true
         setUpWebView()
         setUpBtn()
