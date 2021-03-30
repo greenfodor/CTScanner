@@ -8,4 +8,4 @@
 .externalNativeBuild
 /app/dexguard-license.txt
 /signing
-/production
+/release
