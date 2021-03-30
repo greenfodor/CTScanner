@@ -15,6 +15,7 @@
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.casatamplarului.ctscanner.SecondFragment"
@@ -22,7 +23,13 @@
         tools:layout="@layout/fragment_second">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_SecondFragment_to_FormDisplayFragment"
+            app:destination="@id/FormDisplayFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/FormDisplayFragment"
+        android:name="com.casatamplarului.ctscanner.presentation.FormDisplayFragment"
+        android:label="@string/form_display_fragment_label"
+        tools:layout="@layout/fragment_form_display" />
 </navigation>
