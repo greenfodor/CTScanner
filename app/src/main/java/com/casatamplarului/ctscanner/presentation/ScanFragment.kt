@@ -23,11 +23,13 @@ class ScanFragment : BaseFragment(R.layout.fragment_scan) {
 
     override fun onResume() {
         super.onResume()
+
         codeScanner.startPreview()
     }
 
     override fun onPause() {
         codeScanner.releaseResources()
+
         super.onPause()
     }
 

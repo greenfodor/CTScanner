@@ -6,12 +6,9 @@ import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.casatamplarului.ctscanner.R
 import com.casatamplarului.ctscanner.databinding.FragmentFormDisplayBinding
-import com.casatamplarului.ctscanner.viewmodel.AppViewModel
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
 class FormDisplayFragment : BaseFragment(R.layout.fragment_form_display) {
