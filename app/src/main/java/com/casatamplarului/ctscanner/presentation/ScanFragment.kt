@@ -1,4 +1,4 @@
-package com.casatamplarului.ctscanner
+package com.casatamplarului.ctscanner.presentation
 
 import android.os.Bundle
 import android.view.View
@@ -7,15 +7,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.DecodeCallback
-import com.casatamplarului.ctscanner.databinding.FragmentSecondBinding
+import com.casatamplarului.ctscanner.R
+import com.casatamplarului.ctscanner.databinding.FragmentScanBinding
 import com.casatamplarului.ctscanner.viewmodel.AppViewModel
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
-class SecondFragment : Fragment(R.layout.fragment_second) {
-    private val binding by viewBinding(FragmentSecondBinding::bind)
+class ScanFragment : Fragment(R.layout.fragment_scan) {
+    private val binding by viewBinding(FragmentScanBinding::bind)
     private val viewModel: AppViewModel by activityViewModels()
 
     private lateinit var codeScanner: CodeScanner
@@ -52,6 +50,6 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
 
     private fun onCodeScanned(text: String) {
         viewModel.scannedUrl.value = text
-        findNavController().navigate(R.id.action_SecondFragment_to_FormDisplayFragment)
+        findNavController().navigate(R.id.action_ScanFragment_to_FormDisplayFragment)
     }
 }

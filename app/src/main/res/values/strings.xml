@@ -2,12 +2,10 @@
     <string name="app_name">CTScanner</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="main_fragment_label">Main Fragment</string>
+    <string name="scan_fragment_label">Scan Fragment</string>
     <string name="form_display_fragment_label">Form Display Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="start_scanning">Start Scanning</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
     <string name="scan_next">Scan Next</string>
 </resources>

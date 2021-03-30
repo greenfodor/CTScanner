@@ -2,9 +2,7 @@ package com.casatamplarului.ctscanner.presentation
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.core.view.isVisible
@@ -15,7 +13,6 @@ import com.casatamplarului.ctscanner.R
 import com.casatamplarului.ctscanner.databinding.FragmentFormDisplayBinding
 import com.casatamplarului.ctscanner.viewmodel.AppViewModel
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
-import org.koin.android.ext.android.bind
 
 class FormDisplayFragment : Fragment(R.layout.fragment_form_display) {
     private val binding by viewBinding(FragmentFormDisplayBinding::bind)
