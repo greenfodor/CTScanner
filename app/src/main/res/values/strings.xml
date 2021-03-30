@@ -5,7 +5,16 @@
     <string name="scan_fragment_label">Scan Fragment</string>
     <string name="form_display_fragment_label">Form Display Fragment</string>
 
+    <!-- Permissions -->
+    <string name="permissions_permanently_denied_title">Permission permanently denied</string>
+    <string name="permissions_permanently_denied_message">The Camera Permission has been permanently denied. To re-enable it, it is required to do so from Settings.</string>
+    <string name="permission_required_title">Camera permission</string>
+    <string name="permission_required_message">Camera permission is needed to scan the QR codes</string>
+
     <!-- Buttons -->
     <string name="start_scanning">Start Scanning</string>
     <string name="scan_next">Scan Next</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Okay</string>
 </resources>

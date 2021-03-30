@@ -1,12 +1,15 @@
 package com.casatamplarului.ctscanner.presentation
 
 import android.Manifest
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.Settings
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.casatamplarului.ctscanner.R
 import com.casatamplarului.ctscanner.databinding.FragmentMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
@@ -34,11 +37,50 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
                     }
 
                     override fun onPermissionDenied(respone: PermissionDeniedResponse?) {
+                        showPermissionPermanentlyDeniedDialog()
                     }
 
                     override fun onPermissionRationaleShouldBeShown(request: PermissionRequest?, token: PermissionToken?) {
+                        showPermissionRequiredDialog(token)
                     }
-                }).check()
+                })
+                .check()
+        }
+    }
+
+    private fun showPermissionPermanentlyDeniedDialog() {
+        context?.apply {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.permissions_permanently_denied_title)
+                .setMessage(R.string.permissions_permanently_denied_message)
+                .setPositiveButton(R.string.go_to_settings) { dialog, _ ->
+                    val settingsIntent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+                    settingsIntent.data = Uri.fromParts("package", requireActivity().packageName, null)
+                    startActivity(settingsIntent)
+
+                    dialog.dismiss()
+                }
+                .setNegativeButton(R.string.cancel) { dialog, _ -> dialog.dismiss() }
+                .show()
+        }
+    }
+
+    private fun showPermissionRequiredDialog(token: PermissionToken?) {
+        context?.apply {
+            MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.permission_required_title)
+                .setMessage(R.string.permission_required_message)
+                .setPositiveButton(R.string.ok) { dialog, _ ->
+                    token?.continuePermissionRequest()
+
+                    dialog.dismiss()
+                }
+                .setNegativeButton(R.string.cancel) { dialog, _ ->
+                    token?.cancelPermissionRequest()
+
+                    dialog.dismiss()
+                }
+                .show()
         }
     }
 }
