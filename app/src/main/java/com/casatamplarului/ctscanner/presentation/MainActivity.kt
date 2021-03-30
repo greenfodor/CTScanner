@@ -8,6 +8,7 @@ import com.casatamplarului.ctscanner.databinding.ActivityMainBinding
 import com.casatamplarului.ctscanner.utils.viewBinding
 import com.casatamplarului.ctscanner.viewmodel.AppViewModel
 
+
 class MainActivity : AppCompatActivity() {
     private val viewModel: AppViewModel by viewModels()
     private val binding by viewBinding(ActivityMainBinding::inflate)
@@ -15,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
 
         setUpObservers()
     }

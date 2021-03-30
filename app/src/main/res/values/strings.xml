@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CT Scanner</string>
+    <string name="app_name">CT Scan</string>
     <!-- Strings used for fragments for navigation -->
     <string name="main_fragment_label">Main Fragment</string>
     <string name="scan_fragment_label">Scan Fragment</string>
@@ -12,9 +12,11 @@
     <string name="permission_required_message">Camera permission is needed to scan the QR codes</string>
 
     <!-- Buttons -->
-    <string name="start_scanning">Start Scanning</string>
+    <string name="start_scanning">Începe scanarea</string>
     <string name="scan_next">Scan Next</string>
     <string name="go_to_settings">Go to Settings</string>
     <string name="cancel">Cancel</string>
-    <string name="ok">Okay</string>
+    <string name="ok">OK</string>
+
+    <string name="casa_tamplarului">Casa\nTâmplarului</string>
 </resources>
