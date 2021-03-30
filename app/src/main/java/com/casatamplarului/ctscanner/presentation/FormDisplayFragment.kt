@@ -14,15 +14,15 @@ import com.casatamplarului.ctscanner.databinding.FragmentFormDisplayBinding
 import com.casatamplarului.ctscanner.viewmodel.AppViewModel
 import com.zhuinden.fragmentviewbindingdelegatekt.viewBinding
 
-class FormDisplayFragment : Fragment(R.layout.fragment_form_display) {
+class FormDisplayFragment : BaseFragment(R.layout.fragment_form_display) {
     private val binding by viewBinding(FragmentFormDisplayBinding::bind)
-    private val viewModel: AppViewModel by activityViewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setUpWatchers()
 
+        viewModel.backButtonDisplay.value = true
         binding.wvLoadingPb.isVisible = true
         setUpWebView()
         setUpBtn()
@@ -31,7 +31,7 @@ class FormDisplayFragment : Fragment(R.layout.fragment_form_display) {
     private fun setUpWatchers() {
         viewModel.pageLoaded.observe(this) {
             binding.wvLoadingPb.isVisible = false
-            binding.scanNextBtn.isVisible = true
+            binding.scanNextTv.isVisible = true
         }
     }
 
@@ -51,7 +51,7 @@ class FormDisplayFragment : Fragment(R.layout.fragment_form_display) {
     }
 
     private fun setUpBtn() {
-        binding.scanNextBtn.setOnClickListener {
+        binding.scanNextTv.setOnClickListener {
             findNavController().navigateUp()
         }
     }

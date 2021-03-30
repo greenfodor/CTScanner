@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,17 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/scanNextBtn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="bottom"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
+    <TextView
+        android:id="@+id/scanNextTv"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="60dp"
+        android:background="@drawable/bg_button"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:text="@string/scan_next"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_baseline_qr_code_scanner_24"
         tools:visibility="visible" />
 
     <ProgressBar
@@ -28,8 +35,8 @@
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_gravity="center"
         android:elevation="1dp"
-        android:outlineProvider="none" />
+        android:outlineProvider="none"
+        android:visibility="gone" />
 </FrameLayout>

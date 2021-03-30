@@ -6,14 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".presentation.MainFragment">
 
-    <Button
-        android:id="@+id/scanBtn"
+    <TextView
+        android:id="@+id/scanTv"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_button"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:text="@string/start_scanning"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
         android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_baseline_qr_code_scanner_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
