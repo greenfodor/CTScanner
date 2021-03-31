@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.FormDisplayFragment">
+
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/scanNextTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/bg_button"
+        android:backgroundTint="@color/darkButton"
+        android:fontFamily="@font/coolvetica_regular"
+        android:gravity="center"
+        android:paddingStart="36dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="36dp"
+        android:paddingBottom="12dp"
+        android:text="@string/scan_next"
+        android:textAllCaps="false"
+        android:textColor="@color/darkButton"
+        android:textSize="24sp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/wvLoadingPb"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="1dp"
+        android:indeterminateTint="@color/toolbar_color"
+        android:outlineProvider="none"
+        android:visibility="gone" />
+</FrameLayout>
