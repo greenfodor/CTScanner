@@ -13,7 +13,7 @@
 
     <!-- Buttons -->
     <string name="start_scanning">Începe scanarea</string>
-    <string name="scan_next">Scan Next</string>
+    <string name="scan_next">Scanează următorul</string>
     <string name="go_to_settings">Go to Settings</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
