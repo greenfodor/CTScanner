@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.casatamplarului.ctscanner.databinding.ActivityMainBinding
 import com.casatamplarului.ctscanner.utils.viewBinding
 
-
 class MainActivity : AppCompatActivity() {
     private val binding by viewBinding(ActivityMainBinding::inflate)
 
