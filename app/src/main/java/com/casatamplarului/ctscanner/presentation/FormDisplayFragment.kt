@@ -20,7 +20,7 @@ class FormDisplayFragment : BaseFragment(R.layout.fragment_form_display) {
         setUpWatchers()
 
         binding.wvLoadingPb.isVisible = true
-        setUpWebView()
+        processUrl()
         setUpBtn()
     }
 
@@ -28,7 +28,30 @@ class FormDisplayFragment : BaseFragment(R.layout.fragment_form_display) {
         viewModel.pageLoaded.observe(this) {
             binding.wvLoadingPb.isVisible = false
             binding.scanNextTv.isVisible = true
+            binding.confirmationMessageTv.isVisible = true
         }
+    }
+
+    private fun processUrl() {
+        val url = viewModel.scannedUrl.value?.replace("viewform", "formResponse")
+
+        url?.let {
+            val startIndex = it.indexOf("entry.")
+            var endIndex = it.indexOf("&submit")
+            if (endIndex == -1) {
+                endIndex = it.lastIndex
+            }
+            if (startIndex > -1) {
+                val confirmationMessage = it.substring(startIndex, endIndex)
+                val messageQuery = confirmationMessage.split("=")
+
+                if (messageQuery.size >= 2) {
+                    binding.confirmationMessageTv.text = messageQuery[1].replace("+", " ")
+                }
+            }
+        }
+
+        setUpWebView()
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -41,7 +64,7 @@ class FormDisplayFragment : BaseFragment(R.layout.fragment_form_display) {
             }
         }
 
-        viewModel.scannedUrl.value?.let {
+        viewModel.scannedUrl.value?.replace("viewform", "formResponse")?.let {
             loadUrl(it)
         }
     }
